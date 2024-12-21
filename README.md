@@ -31,7 +31,7 @@
    </details>
 
 
-2. Регистрация пользователя.
+2. Регистрация пользователя.(DONE)
 
     <details>
     <summary> Описание изменений. </summary>
@@ -44,7 +44,7 @@
     </details>
 
 
-3. Авторизация пользователя.
+3. Авторизация пользователя.(DONE)
 
     <details>
     <summary> Описание изменений. </summary>
@@ -57,7 +57,7 @@
     </details>
 
 
-4. Информация о загруженных файлах.
+4. Информация о загруженных файлах.(DONE)
 
     <details>
     <summary> Описание изменений. </summary>
@@ -95,7 +95,7 @@
     </details>
 
 
-5. Загрузить файл в хранилище.
+5. Загрузить файл в хранилище.(DONE)
 
     <details>
     <summary> Описание изменений. </summary>
@@ -110,7 +110,7 @@
     **Request**
     ```
     {
-        "path": <full-path-to-file>||<path-to-folder>,
+        "path": <full-path-to-File>||<path-to-folder>,
     }
     ```
 
@@ -128,7 +128,7 @@
     </details>
 
 
-6. Скачать загруженный файл.
+6. Скачать загруженный файл.(DONE)
 
     <details>
     <summary> Описание изменений. </summary>
@@ -140,7 +140,7 @@
 
     **Path parameters**
     ```
-    /?path=<path-to-file>||<file-meta-id>
+    /?path=<path-to-File>||<File-meta-id>
     ```
     Возможность скачивания есть как по переданному пути до файла, так и по идентификатору.
     </details>
@@ -159,7 +159,7 @@
    <summary> Описание изменений. </summary>
 
     ```
-    GET /files/download
+    GET /Files/download
     ```
     Path-параметр расширяется дополнительным параметром – `compression`. Доступно только авторизованному пользователю.
 
@@ -167,7 +167,7 @@
 
     **Path parameters**
     ```
-    /?path=[<path-to-file>||<file-meta-id>||<path-to-folder>||<folder-meta-id>] & compression"=[zip||tar||7z]
+    /?path=[<path-to-File>||<File-meta-id>||<path-to-folder>||<folder-meta-id>] & compression"=[zip||tar||7z]
     ```
     </details>
 
@@ -194,18 +194,18 @@
             "root": {
                 "allocated": "1000000",
                 "used": "395870",
-                "files": 89
+                "Files": 89
             },
             "home": {
                 "allocated": "1590",
                 "used": "539",
-                "files": 19
+                "Files": 19
             },
             ...,
             "folder-188734": {
                 "allocated": "300",
                 "used": "79",
-                "files": 2
+                "Files": 2
           }
         ]
     }
@@ -219,7 +219,7 @@
     <summary> Описание изменений. </summary>
 
     ```
-    POST /files/search
+    POST /Files/search
     ```
     Вернуть информацию о загруженных файлах по заданным параметрам. Доступно только авторизованному пользователю.
 
@@ -228,7 +228,7 @@
     {
         "options": {
             "path": <folder-id-to-search>,
-            "extension": <file-extension>,
+            "extension": <File-extension>,
             "order_by": <field-to-order-search-result>,
             "limit": <max-number-of-results>
         },
@@ -261,14 +261,14 @@
     <summary> Описание изменений. </summary>
 
     ```
-    POST /files/revisions
+    POST /Files/revisions
     ```
     Вернуть информацию об изменениях файла по заданным параметрам. Доступно только авторизованному пользователю.
 
     **Request**
     ```json
     {
-        "path": <path-to-file>||<file-meta-id>,
+        "path": <path-to-File>||<File-meta-id>,
         "limit": <max-number-of-results>
     }
     ```
